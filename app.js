@@ -238,6 +238,22 @@ nomeBalsa.addEventListener("input", () => {
 
 });
 
+pallets.addEventListener("input", () => {
+
+    const qtdPallets = Number(pallets.value);
+
+    if (isNaN(qtdPallets) || pallets.value.trim() === "") {
+
+        sacos.value = "";
+
+        return;
+
+    }
+
+    sacos.value = qtdPallets * 40;
+
+});
+
 // ===============================
 // BOTÃO INICIAR
 // ===============================
