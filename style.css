@@ -1,0 +1,306 @@
+/* ===========================
+   RESET
+=========================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+
+    background: #f2f4f7;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    padding: 18px;
+
+    color: #222;
+}
+
+
+/* ===========================
+   TELAS
+=========================== */
+
+.tela{
+
+    width:100%;
+
+    max-width:550px;
+
+    margin:auto;
+
+    padding-bottom:50px;
+
+}
+
+.hidden{
+
+    display:none;
+
+}
+
+
+/* ===========================
+   TITULOS
+=========================== */
+
+h1{
+
+    text-align:center;
+
+    margin-top:20px;
+
+    margin-bottom:25px;
+
+    font-size:32px;
+
+    font-weight:bold;
+
+}
+
+
+/* ===========================
+   CARD
+=========================== */
+
+.card{
+
+    background:white;
+
+    border-radius:16px;
+
+    padding:20px;
+
+    box-shadow:
+
+        0px 3px 12px rgba(0,0,0,.10);
+
+}
+
+
+/* ===========================
+   LABEL
+=========================== */
+
+label{
+
+    display:block;
+
+    margin-top:18px;
+
+    margin-bottom:8px;
+
+    font-size:16px;
+
+    font-weight:bold;
+
+}
+
+
+/* ===========================
+   INPUTS
+=========================== */
+
+input[type=text],
+input[type=number]{
+
+    width:100%;
+
+    height:52px;
+
+    border:1px solid #d7d7d7;
+
+    border-radius:10px;
+
+    padding-left:15px;
+
+    font-size:18px;
+
+    outline:none;
+
+    transition:.2s;
+
+}
+
+input:focus{
+
+    border-color:#1565c0;
+
+}
+
+
+/* Remove setinhas do number */
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button{
+
+    -webkit-appearance:none;
+
+}
+
+input[type=number]{
+
+    appearance:textfield;
+
+}
+
+
+/* ===========================
+   RADIO
+=========================== */
+
+.radioGroup{
+
+    display:flex;
+
+    gap:30px;
+
+    margin-top:5px;
+
+}
+
+.radioItem{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    font-size:18px;
+
+    font-weight:normal;
+
+}
+
+
+/* ===========================
+   BOTÕES
+=========================== */
+
+button{
+
+    width:100%;
+
+    height:55px;
+
+    border:none;
+
+    border-radius:12px;
+
+    margin-top:20px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    font-weight:bold;
+
+    transition:.2s;
+
+}
+
+
+/* botão principal */
+
+#btnIniciar,
+#btnRegistrar,
+#btnGerarPDF{
+
+    background:#0b74ff;
+
+    color:white;
+
+}
+
+#btnIniciar:hover,
+#btnRegistrar:hover,
+#btnGerarPDF:hover{
+
+    transform:scale(1.01);
+
+}
+
+
+/* secundário */
+
+.secundario{
+
+    background:#f4b400;
+
+    color:black;
+
+}
+
+
+/* perigo */
+
+.danger{
+
+    background:#d93025;
+
+    color:white;
+
+}
+
+
+/* desabilitado */
+
+button:disabled{
+
+    opacity:.45;
+
+    cursor:not-allowed;
+
+}
+
+
+/* ===========================
+   HISTÓRICO
+=========================== */
+
+#listaHistorico{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+.itemHistorico{
+
+    background:white;
+
+    border-radius:12px;
+
+    padding:15px;
+
+    box-shadow:0 2px 8px rgba(0,0,0,.08);
+
+}
+
+
+/* ===========================
+   MOBILE
+=========================== */
+
+@media(max-width:480px){
+
+    h1{
+
+        font-size:27px;
+
+    }
+
+    button{
+
+        height:58px;
+
+    }
+
+}

@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Controle de Carga</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+    <!-- AutoTable -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.8.2/jspdf.plugin.autotable.min.js"></script>
+
+</head>
+
+<body>
+
+    <!-- ========================= -->
+    <!-- TELA INICIAL -->
+    <!-- ========================= -->
+
+    <section id="telaInicial" class="tela">
+
+        <h1>CONTROLE DE CARGA</h1>
+
+        <div class="card">
+
+            <label for="nomeBalsa">
+                Nome da Balsa
+            </label>
+
+            <input
+                id="nomeBalsa"
+                type="text"
+                placeholder="Digite o nome da balsa"
+                autocomplete="off"
+            >
+
+            <label for="dataInicio">
+                Data de Início
+            </label>
+
+            <input
+                id="dataInicio"
+                type="text"
+                maxlength="10"
+                inputmode="numeric"
+                placeholder="DD/MM/AAAA"
+                autocomplete="off"
+            >
+
+            <label for="horaInicio">
+                Hora de Início
+            </label>
+
+            <input
+                id="horaInicio"
+                type="text"
+                maxlength="5"
+                inputmode="numeric"
+                placeholder="HH:MM"
+                autocomplete="off"
+            >
+
+            <button
+                id="btnIniciar"
+                disabled
+            >
+                INICIAR
+            </button>
+
+       <!--
+     <button
+                id="btnHistorico"
+                class="secundario"
+            >
+                HISTÓRICO
+            </button>
+
+          -->
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- REGISTRO DAS CARRETAS -->
+    <!-- ========================= -->
+
+    <section id="telaCarreta" class="tela hidden">
+
+        <h1 id="tituloCarreta">
+
+            CARRETA Nº 1
+
+        </h1>
+
+        <div class="card">
+
+            <label>
+
+                Tipo do Cimento
+
+            </label>
+
+            <div class="radioGroup">
+
+                <label class="radioItem">
+
+                    <input
+                        type="radio"
+                        name="cimento"
+                        value="Verde"
+                    >
+
+                    Verde
+
+                </label>
+
+                <label class="radioItem">
+
+                    <input
+                        type="radio"
+                        name="cimento"
+                        value="Preto"
+                    >
+
+                    Preto
+
+                </label>
+
+            </div>
+
+            <label for="pallets">
+
+                Quantidade de Pallets
+
+            </label>
+
+            <input
+
+                id="pallets"
+
+                type="text"
+
+                inputmode="numeric"
+
+                pattern="[0-9]*"
+
+                autocomplete="off"
+
+            >
+
+            <label for="sacos">
+
+                Quantidade de Sacos
+
+            </label>
+
+            <input
+
+                id="sacos"
+
+                type="text"
+
+                inputmode="numeric"
+
+                pattern="[0-9]*"
+
+                autocomplete="off"
+
+            >
+
+            <button id="btnRegistrar">
+
+                REGISTRAR
+
+            </button>
+
+            <button
+
+                id="btnDesfazer"
+
+                class="secundario"
+
+            >
+
+                DESFAZER ÚLTIMA CARRETA
+
+            </button>
+
+            <button
+
+                id="btnFinalizar"
+
+                class="danger"
+
+            >
+
+                FINALIZAR CARGA
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- FINALIZAR -->
+    <!-- ========================= -->
+
+    <section id="telaFinalizar" class="tela hidden">
+
+        <h1>
+
+            FINALIZAR CARGA
+
+        </h1>
+
+        <div class="card">
+
+            <label>
+
+                Data de Término
+
+            </label>
+
+            <input
+
+                id="dataFim"
+
+                type="text"
+
+                maxlength="10"
+
+                inputmode="numeric"
+
+                placeholder="DD/MM/AAAA"
+
+                autocomplete="off"
+
+            >
+
+            <label>
+
+                Hora de Término
+
+            </label>
+
+            <input
+
+                id="horaFim"
+
+                type="text"
+
+                maxlength="5"
+
+                inputmode="numeric"
+
+                placeholder="HH:MM"
+
+                autocomplete="off"
+
+            >
+
+            <button id="btnGerarPDF">
+
+                GERAR PDF
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ========================= -->
+    <!-- HISTÓRICO -->
+    <!-- ========================= -->
+
+    <section
+
+        id="telaHistorico"
+
+        class="tela hidden"
+
+    >
+
+        <h1>
+
+            HISTÓRICO
+
+        </h1>
+
+        <div id="listaHistorico">
+
+        </div>
+
+    </section>
+
+
+
+    <!-- Scripts -->
+
+    <script src="pdf.js"></script>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
