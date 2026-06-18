@@ -38,6 +38,7 @@ const horaInicio = document.getElementById("horaInicio");
 const btnIniciar = document.getElementById("btnIniciar");
 
 const tituloCarreta = document.getElementById("tituloCarreta");
+const totalAcumulado = document.getElementById("totalAcumulado");
 
 const pallets = document.getElementById("pallets");
 const sacos = document.getElementById("sacos");
@@ -321,6 +322,13 @@ function abrirTelaCarreta() {
 
 }
 
+function atualizarTotalAcumulado () {
+    const total = estado.carretas.reduce((soma, item) => soma + Number(item.sacos), 0 );
+    
+    totalAcumulado.textContent = total + " sacos";
+
+}   
+
 function abrirTelaFinalizar() {
 
     esconderTodas();
@@ -368,6 +376,7 @@ function restaurarCampos() {
 // ===============================
 
 restaurarCampos();
+atualizarTotalAcumulado();
 
 switch (estado.tela) {
 
@@ -468,6 +477,7 @@ btnRegistrar.addEventListener("click", () => {
     });
 
     salvarEstado();
+    atualizarTotalAcumulado();
 
     document
         .querySelectorAll(
@@ -513,9 +523,8 @@ btnDesfazer.addEventListener("click", () => {
         return;
 
     estado.carretas.pop();
-
     salvarEstado();
-
+    atualizarTotalAcumulado();
     atualizarNumeroCarreta();
 
 });
