@@ -323,11 +323,15 @@ function abrirTelaCarreta() {
 }
 
 function atualizarTotalAcumulado () {
-    const total = estado.carretas.reduce((soma, item) => soma + Number(item.sacos), 0 );
-    
-    totalAcumulado.textContent = total + " sacos";
 
-}   
+    const total = estado.carretas.reduce(
+        (soma, item) => soma + Number(item.sacos),
+        0
+    );
+
+    totalAcumulado.textContent =
+        "Total: " + total.toLocaleString("pt-BR") + " sacos";
+}
 
 function abrirTelaFinalizar() {
 
